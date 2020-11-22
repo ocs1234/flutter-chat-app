@@ -45,7 +45,7 @@ class AuthService with ChangeNotifier {
       'password': password
     };
 
-    final resp = await http.post('${ Enviroment.apiUrl }/login/', 
+    final resp = await http.post('${ Environment.apiUrl }/login/', 
      body: jsonEncode(data),
      headers: {
        'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ class AuthService with ChangeNotifier {
       'password': password
     };
 
-    final resp = await http.post('${ Enviroment.apiUrl }/login/new',
+    final resp = await http.post('${ Environment.apiUrl }/login/new',
      body: jsonEncode(data),
      headers: {
        'Content-Type': 'application/json'
@@ -104,7 +104,7 @@ class AuthService with ChangeNotifier {
    
     final token = await this._storage.read(key: 'token');
 
-     final resp = await http.get('${ Enviroment.apiUrl }/login/renew',
+     final resp = await http.get('${ Environment.apiUrl }/login/renew',
      headers: {
        'Content-Type': 'application/json',
        'x-token': token
